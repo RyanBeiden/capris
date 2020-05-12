@@ -48,3 +48,45 @@ li:hover {
 .fa-instagram {
   background-color: hotpink;
 }
+.navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar img {
+  margin: 15px 15px 15px 60px;
+  padding: 0;
+}
+
+.navtabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+  font-family: 'Lemon', cursive;
+}
+
+.navbutton {
+  margin: 0;
+  padding: 10px;
+  border: solid 1px #2a4a4a;
+  border-bottom: 0;
+  width: 130px;
+  border-radius: 15px 15px 0px 0px ;
+  text-align: center;
+}
+
+#hometab {
+  background-color: #c3a61e;
+  color: #2a4a4a;
+}
+
+#historytab {
+  background-color: #e5562b;
+  color: #2a4a4a;
+}
+
+#contacttab {
+  background-color: #a775d2;
+  color: #2a4a4a;
+}
