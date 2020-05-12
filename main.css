@@ -121,13 +121,16 @@ li:hover {
 
 .caprisinfobox {
   border: solid 2px #292929;
-  margin: 0px 450px 30px 450px;
   padding: 10px;
   border-radius: 10px;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .sizeandprice {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 #cartbutton {
