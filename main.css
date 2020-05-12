@@ -1,3 +1,16 @@
-body {
-  background-color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+.see-capris h1 {
+  font-family: 'Lemon', cursive;
+  color: #2a4a4a;
+  margin: 40px 0px 0px 75px;
 }
+
+.capri-image {
+  box-shadow: 0px 0px 12px #444444c4;
+}
+
+  /* Temporary: */
+  .tempTest {
+  margin-bottom: 50px;
+  }
