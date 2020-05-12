@@ -6,7 +6,7 @@
 }
 
 .navbar img {
-  margin: 15px 15px 15px 60px;
+  margin: 5px 15px 5px 60px;
   padding: 0;
 }
 
@@ -91,3 +91,52 @@ li:hover {
 .fa-instagram {
   background-color: hotpink;
 }
+
+/* Sitewide page layout */
+
+/* Index page layout */
+
+/* Capris page layout */
+
+#caprismain {
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+#buycaprispic {
+  height: 500px;
+  width: 400px;
+}
+
+#nameandrating {
+  display: flex;
+  justify-content: center;
+}
+
+#buycaprisname {
+  font-family: 'Lemon', cursive;
+  margin: 10px 40px 10px 0px;
+}
+
+.caprisinfobox {
+  border: solid 2px #292929;
+  margin: 0px 450px 30px 450px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.sizeandprice {
+  display: inline-block;
+}
+
+#cartbutton {
+  background-color: #f9931e;
+  border: solid 1px #292929;
+  border-radius: 10px;
+  width: 90%;
+}
+
+/* History page layout */
+
+/* Contact page layout */
