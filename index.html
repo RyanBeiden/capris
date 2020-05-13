@@ -24,17 +24,48 @@
       </nav>
     </header>
 
-    <img class="img-fluid" src="/images/capri-header.jpeg" alt="A man's lower half displaying Capri pants with flip flops while on a beach">
-
+    <a href="#">
+      <img class="img-fluid" src="/images/capri-header.jpeg" alt="A man's lower half displaying Capri pants with flip flops while on a beach">
+    </a>
     <div class="see-capris">
       <h1>See Our Capris</h1>
     </div>
     <div class="d-flex justify-content-center">
-      <img class="capri-image" src="/images/capri-1.jpg" alt="">
+      <div id="carouselWithControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="/images/capri-1.jpg" alt="Capri 1">
+            <div class="d-flex justify-content-center">
+              <a id="capri-btn" class="btn btn-primary" href="#" role="button">Capri 1</a>
+            </div>
+            <p class="capri-description">This capri is really cool and is made in a cool way.</p>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/images/capri-2.jpg" alt="Capri 2">
+            <div class="d-flex justify-content-center">
+              <a id="capri-btn" class="btn btn-primary" href="#" role="button">Capri 2</a>
+            </div>
+            <p class="capri-description">This capri is really cool and is made in a cool way.</p>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/images/capri-3.jpg" alt="Capri 3">
+            <div class="d-flex justify-content-center">
+              <a id="capri-btn" class="btn btn-primary" href="#" role="button">Capri 3</a>
+            </div>
+            <p class="capri-description">This capri is really cool and is made in a cool way.</p>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselWithControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselWithControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <a class="btn btn-primary" href="#" role="button">Link</a>
-    </div>
+
     <!-- Temporary: -->
     <div class="tempTest"></div>
     <!---->
