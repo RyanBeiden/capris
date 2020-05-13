@@ -96,6 +96,67 @@ li:hover {
 
 /* Index page layout */
 
+.see-capris h1 {
+  font-family: 'Lemon', cursive;
+  color: #2a4a4a;
+  margin: 40px 0px 0px 75px;
+}
+
+.carousel {
+  width: 450px;
+}
+
+.carousel-control-next {
+  opacity: 1;
+  background-color: #c3a61e;
+  border: 1px solid #c3a61e;
+  border-radius: 0px 10px 0px 10px;
+  margin: 0px 0px 160px 0px;
+}
+
+.carousel-control-prev {
+  opacity: 1;
+  background-color: #c3a61e;
+  border: 1px solid #c3a61e;
+  border-radius: 10px 0px 10px 0px;
+  margin: 0px 0px 160px 0px;
+}
+
+.carousel-item {
+  border: 2px solid #c3a61e;
+  border-radius: 10px;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  opacity: .9;
+  transition: ease-in 100ms;
+  border: 1px solid #c3a61e;
+}
+
+#capri-btn {
+  background-color: #c3a61e;
+  border: 1px solid #927c17;
+  color: #2a4a4a;
+  font-family: 'Lemon', cursive;
+  padding: 6px 40px 6px 40px;
+  margin: 25px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#capri-btn:hover {
+  background-color: rgba(195, 165, 30, 0.9);
+  border: 1px solid #c3a61e;
+}
+
+.capri-description {
+  color: #2a4a4a;
+  font-family: 'Lemon', cursive;
+  text-align: center;
+  font-size: 1.1em;
+}
+
 /* Capris page layout */
 
 #caprismain {
