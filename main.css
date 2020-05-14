@@ -1,6 +1,49 @@
-body {
-  background-color: aqua;
+/* Navigation */
+
+.navbar {
+  margin: 0;
+  padding: 0;
 }
+
+.navbar img {
+  margin: 5px 15px 5px 60px;
+  padding: 0;
+}
+
+.navtabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+  font-family: 'Lemon', cursive;
+}
+
+.navbutton {
+  margin: 0;
+  padding: 10px;
+  border: solid 1px #2a4a4a;
+  border-bottom: 0;
+  width: 130px;
+  border-radius: 15px 15px 0px 0px ;
+  text-align: center;
+}
+
+#hometab {
+  background-color: #c3a61e;
+  color: #2a4a4a;
+}
+
+#historytab {
+  background-color: #e5562b;
+  color: #2a4a4a;
+}
+
+#contacttab {
+  background-color: #a775d2;
+  color: #2a4a4a;
+}
+
+/* Footer */
 
 .footer {
   display: flex;
@@ -48,45 +91,164 @@ li:hover {
 .fa-instagram {
   background-color: hotpink;
 }
-.navbar {
-  margin: 0;
-  padding: 0;
-}
 
-.navbar img {
-  margin: 15px 15px 15px 60px;
-  padding: 0;
-}
+/* Sitewide page layout */
 
-.navtabs {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-self: flex-end;
+/* Index page layout */
+
+.see-capris h1 {
   font-family: 'Lemon', cursive;
+  color: #2a4a4a;
+  margin: 40px 0px 0px 75px;
 }
 
-.navbutton {
-  margin: 0;
-  padding: 10px;
-  border: solid 1px #2a4a4a;
-  border-bottom: 0;
-  width: 130px;
-  border-radius: 15px 15px 0px 0px ;
+.carousel {
+  width: 450px;
+  margin-bottom: 50px;
+}
+
+.carousel-control-next {
+  opacity: 1;
+  background-color: #c3a61e;
+  border: 1px solid #c3a61e;
+  border-radius: 0px 10px 0px 10px;
+  margin: 0px 0px 160px 0px;
+}
+
+.carousel-control-prev {
+  opacity: 1;
+  background-color: #c3a61e;
+  border: 1px solid #c3a61e;
+  border-radius: 10px 0px 10px 0px;
+  margin: 0px 0px 160px 0px;
+}
+
+.carousel-item {
+  border: 2px solid #c3a61e;
+  border-radius: 10px;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  opacity: .9;
+  transition: ease-in 100ms;
+  border: 1px solid #c3a61e;
+}
+
+#capri-btn {
+  background-color: #c3a61e;
+  border: 1px solid #927c17;
+  color: #2a4a4a;
+  font-family: 'Lemon', cursive;
+  padding: 6px 40px 6px 40px;
+  margin: 25px;
+  font-size: 1.1em;
   text-align: center;
 }
 
-#hometab {
-  background-color: #c3a61e;
-  color: #2a4a4a;
+#capri-btn:hover {
+  background-color: rgba(195, 165, 30, 0.9);
+  border: 1px solid #c3a61e;
 }
 
-#historytab {
-  background-color: #e5562b;
+.capri-description {
   color: #2a4a4a;
+  font-family: 'Lemon', cursive;
+  text-align: center;
+  font-size: 1.1em;
 }
 
-#contacttab {
-  background-color: #a775d2;
-  color: #2a4a4a;
+/* Capris page layout */
+
+#caprismain {
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+#buycaprispic {
+  height: 500px;
+  width: 400px;
+}
+
+#nameandrating {
+  display: flex;
+  justify-content: center;
+}
+
+#buycaprisname {
+  font-family: 'Lemon', cursive;
+  margin: 10px 40px 10px 0px;
+}
+
+.caprisinfobox {
+  border: solid 2px #292929;
+  padding: 10px;
+  border-radius: 10px;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.sizeandprice {
+  display: flex;
+  justify-content: space-between;
+}
+
+#cartbutton {
+  background-color: #f9931e;
+  border: solid 1px #292929;
+  border-radius: 10px;
+  width: 90%;
+}
+
+/* History page layout */
+
+/* Contact page layout */
+
+.contactthanks {
+  font-family: 'Lemon', cursive;
+  margin: 40px 0px 10px 50px;
+}
+
+.contactinstructions {
+  margin: 10px 70px 30px 70px;
+}
+
+.contactform {
+  margin: 10px 70px 10px 70px;
+}
+
+.contactfield {
+  display: flex;
+  width: 600px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.contactmessage {
+  width: 100%;
+  height: 300px;
+  padding: 0px 10px;
+}
+
+.subscribesubmit {
+  display: flex;
+  margin-left: 70px;
+  justify-content: space-between;
+  }
+
+#contactbutton {
+  background-color: #f9931e;
+  border: solid 1px #292929;
+  border-radius: 10px;
+  width: 30%;
+  margin-bottom: 20px;
+  margin-right: 40%;
 }
