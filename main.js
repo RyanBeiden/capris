@@ -110,13 +110,22 @@ const addedToCart = () => {
 
 /* Contact page */
 
-/* const contactSubmitClick = () => {
-  document.getElementById('contactbutton');  
-  cartbutton.addEventListener('click', contactSubmitted);
-} */
+const contactSubmitClick = () => {
+  document.querySelector('#contactbutton').addEventListener('click', contactSubmitted);
+}
 
-/* contactSubmitted {
-} */
+const contactSubmitted =() => {
+  domString = '';
+  domString += `
+  <div id="emailsent">
+    <h1 id='emailsentconfirm'>Your message has been sent!</h1>
+    <a href="index.html">Return to home page</a>
+  </div>
+  `;
+  printToDom('#contactconfirm', domString);
+  document.getElementById("contactform").reset();
+  document.getElementById("contactcontainer").hidden=true;
+}
 
-/* cartBttnClick() */
+contactSubmitClick()
 generateProduct(capris[0])
