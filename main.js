@@ -51,3 +51,33 @@ const capris = [
     size: ["M"]
   },
 ];
+
+const printToDom = (selector, textToPrint) => {
+  document.querySelector(selector).innerHTML = textToPrint;
+}
+
+const carouselItems = () => {
+  let domString;
+  for (let i = 0; i < capris.length; i++) {
+    domString += `
+    <div class="carousel-item">
+      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+      <div class="d-flex justify-content-center">
+        <a id="capri-btn" class="btn btn-primary" href="#" role="button">Buy ${capris[i].name}</a>
+      </div>
+      <p class="capri-description">${capris[i].description}</p>
+    </div>
+    `;
+  }
+  printToDom("#capri-1", domString);
+}
+
+const carousel = () => {
+  carouselItems();
+}
+
+const init = () => {
+  carousel();
+}
+
+init();
