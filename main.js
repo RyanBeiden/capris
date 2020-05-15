@@ -57,8 +57,9 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-/* Creates content for Buy Capris page based on click from home page */
+/* Buy Capris page */
 
+/* Creates content for Buy Capris page based on click from home page */
 const generateProduct = (selectedPants) => {
   domString = '';
   domString += `
@@ -85,32 +86,46 @@ const generateProduct = (selectedPants) => {
     <button id="cartbutton">Add to Cart</button>
   </div>
 </div>
-
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer">
-<ul class="social">
-  <li><i class="fab fa-facebook"></i></li>
-  <li><i class="fab fa-twitter"></i></li>
-  <li><i class="fab fa-instagram"></i></li>
-  <li><i class="fab fa-github"></i></li>
-</ul>
-<div class="copywrite"><small>Copyright &copy; CapriAndSons.com <br><a href="contact.html">Contact Us</a></small></div>
-</footer>
   `; 
   printToDom('#caprismain', domString);
+  cartBttnClick()
 };
 
-/* Doesn't work yet for some reason, plan is to clear the screen and display a thank you h1 */
+/* This is the event listener for the add to cart page */
 const cartBttnClick = () => {
-  document.getElementById('cartbutton');  
-  cartbutton.addEventListener('click', addedToCart);
+  document.querySelector('#cartbutton').addEventListener('click', addedToCart);
 }
 
+/* Prints order confirmed string */
 const addedToCart = () => {
-  domString = '';
+ domString = '';
   domString += `
-  <h1>Thank you for your purchase!</h1>
+  <div id="purchasedbox">
+    <h1 id='purchaseconfirm'>Item added to cart!</h1>
+    <a href="index.html">Return to home page</a>
+  </div>
   `;
   printToDom('#caprismain', domString);
 }
 
+/* Contact page */
+
+const contactSubmitClick = () => {
+  document.querySelector('#contactbutton').addEventListener('click', contactSubmitted);
+}
+
+const contactSubmitted =() => {
+  domString = '';
+  domString += `
+  <div id="emailsent">
+    <h1 id='emailsentconfirm'>Your message has been sent!</h1>
+    <a href="index.html">Return to home page</a>
+  </div>
+  `;
+  printToDom('#contactconfirm', domString);
+  document.getElementById("contactform").reset();
+  document.getElementById("contactcontainer").hidden=true;
+}
+
+contactSubmitClick()
 generateProduct(capris[0])

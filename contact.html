@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="https://i.imgur.com/IWnKmEd.png">
 </head>
 
-<body>
+<>
   <header>
     <nav class="navbar" id="contacttab">
       <a href="index.html">
@@ -24,11 +24,12 @@
     </nav>
   </header>
 
-  <div class="contactpage">
+<div id="contactcontainer">
+  <div class="contactpage" id="contactpage">
     <h2 class="contactthanks">Thanks for getting in touch!</h2>
     <p class="contactinstructions">Have a question about a product? Something to ask about your order? Just want to reach out and say how much you love our capris? We love talking to our customers, no matter what! Please fill out the required info in the form below and, if your message regards an existing order, provide the order number that can be found in your confirmation email. We will respond to your inquiry within two businesses days excluding Sundays, New Year's Day, Chinese New Year, St. Patrick's Day, Cinco de Mayo, Thanksgiving, Christmas, Yom Kippur, any day in April, Tony Hawk's Birthday, any calendar day which is a multiple of 4, and Labor Day.</p>
   </div>
-  <form class="contactform">
+  <form class="contactform" id="contactform">
     <input class="contactfield" type="text" id="name" name="name" required placeholder="Name">
     <input class="contactfield" type="email" id="email" name="email" required placeholder="Email Address">
     <input class="contactfield" type="number" id="ordernum" name="ordernum" step="1" placeholder = "Order Number (if inquiring about an existing order)" min="100000" max="999999">
@@ -42,6 +43,8 @@
     </div>
     <button id="contactbutton">Submit</button>
   </div>
+</div>
+  <div id="contactconfirm"></div>
 
   <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer">
     <ul class="social">
