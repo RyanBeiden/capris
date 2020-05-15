@@ -201,6 +201,14 @@ li:hover {
   width: 90%;
 }
 
+#purchasedbox {
+  margin: 300px 0px;
+}
+
+#purchaseconfirm {
+  font-family: 'Lemon', cursive;
+}
+
 /* History page layout */
 
 /* Contact page layout */
