@@ -57,13 +57,22 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-/* Buy Capris page */
+// Index Page (Ryan)
 
-// Index Page (Ryan's wip)
-
-const carouselItems = () => {
-  let domString;
+const carousel = () => {
+  let domString = '';
   for (let i = 0; i < capris.length; i++) {
+    if (i === 0) {
+      domString += `
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+      <div class="d-flex justify-content-center">
+        <a id="capri-btn" class="btn btn-primary" href="#" role="button">Buy ${capris[i].name}</a>
+      </div>
+      <p class="capri-description">${capris[i].description}</p>
+    </div>
+    `;
+    } else if (i >= 1) {
     domString += `
     <div class="carousel-item">
       <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
@@ -73,15 +82,18 @@ const carouselItems = () => {
       <p class="capri-description">${capris[i].description}</p>
     </div>
     `;
+    }
   }
-  printToDom("#capri-1", domString);
+  printToDom("#carousel-items", domString);
 }
 
 const init = () => {
-  carouselItems();
+  carousel();
 }
 
 init();
+
+/* Buy Capris page */
 
 /* Creates content for Buy Capris page based on click from home page */
 const generateProduct = (selectedPants) => {
