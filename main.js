@@ -71,7 +71,6 @@ const capriHistory =[
     description: "Spanish tennis player Rafael Nadal wore capri pants in the majority of his matches before 2009.",
     numberOneSong: "The Black Eyed Peas-Boom Boom Pow"
   },
- 
 ]
 
 
