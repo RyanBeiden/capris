@@ -51,3 +51,27 @@ const capris = [
     size: ["M"]
   },
 ];
+
+// Data for history carrousel 
+
+const capriHistory =[
+
+  { imageUrl: "/images/capri-7.jpg",
+    timePeriod: "1950s",
+    description: "Capris were created by Sonja de Lennart in the early 1950s. It was apart of the 'Capri Collection'. Named after the isle of capri where her family would holiday",
+    numberOneSong: "Gordon Jenkins & The Weavers-Goodnight Irene"
+  },
+  { imageUrl:"/images/capri-8.jpg",
+    timePeriod: "1960s",
+    description: "Mary Tyler popularized Capri pants in the 60's on The Dick Van Dyke show",
+    numberOneSong: "Percy Faith-Theme from A Summer Place"
+  },
+  { imageUrl:"/images/capri-9.jpg",
+    timePeriod: "2000s",
+    description: "Spanish tennis player Rafael Nadal wore capri pants in the majority of his matches before 2009.",
+    numberOneSong: "The Black Eyed Peas-Boom Boom Pow"
+  },
+ 
+]
+
+
