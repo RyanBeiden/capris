@@ -135,10 +135,10 @@ li:hover {
   border: 1px solid #c3a61e;
 }
 
-#capri-btn {
+.capri-btn {
   background-color: #c3a61e;
   border: 1px solid #927c17;
-  color: #2a4a4a;
+  color: #2a4a4a !important;
   font-family: 'Lemon', cursive;
   padding: 6px 40px 6px 40px;
   margin: 25px;
@@ -146,7 +146,7 @@ li:hover {
   text-align: center;
 }
 
-#capri-btn:hover {
+.capri-btn:hover {
   background-color: rgba(195, 165, 30, 0.9);
   border: 1px solid #c3a61e;
 }

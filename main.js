@@ -80,12 +80,6 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-// Redirects URLs
-
-const pathRedirect = (urlPath) => {
-  window.location.href = urlPath;
-}
-
 // Buy Capris page
 // Creates content for Buy Capris page based on click from home page
 
@@ -100,32 +94,37 @@ const sizeDom = (pantsSize) => {
 }
 
 const generateProduct = (selectedPants) => {
-  // pathRedirect("/capris.html");
+  // window.location.href = "/capris.html";
   domString = '';
-  domString += `
-  <div id="caprisDom">
-    <img id="buycaprispic" src="${selectedPants[0].imageUrl}">
-    <div id="nameandrating">
-      <h5 id="buycaprisname">${selectedPants[0].name}</h5><h2>☆☆☆☆☆</h2>
-    </div>
-    <div class="caprisinfobox">
-      <p id="caprisinfo">${selectedPants[0].description}</p>
-      <div class="sizeandprice">
-        <div id="sizeselector">
-          <label id="sizelabel">Size:</label>
-          <select name="sizelist" id="size">
-          </select>
-        </div>
-        <h3 id="price">$${selectedPants[0].price}</h3>
+  console.log(selectedPants);
+  for (let i = 0; i < capris.length; i++) {
+    if (capris[i] === selectedPants) {
+    domString += `
+    <div id="caprisDom">
+      <img id="buycaprispic" src="${capris[i].imageUrl}">
+      <div id="nameandrating">
+        <h5 id="buycaprisname">${capris[i].name}</h5><h2>☆☆☆☆☆</h2>
       </div>
-      <button id="cartbutton">Add to Cart</button>
+      <div class="caprisinfobox">
+        <p id="caprisinfo">${capris[i].description}</p>
+        <div class="sizeandprice">
+          <div id="sizeselector">
+            <label id="sizelabel">Size:</label>
+            <select name="sizelist" id="size">
+            </select>
+          </div>
+          <h3 id="price">$${capris[i].price}</h3>
+        </div>
+        <button id="cartbutton">Add to Cart</button>
+      </div>
     </div>
-  </div>
-  `;
+    `;
+    }
+  }
   printToDom('#caprismain', domString);
   sizeDom(selectedPants);
   cartBttnClick();
-};
+}
 
 // This is the event listener for the add to cart page
 
@@ -148,8 +147,17 @@ const addedToCart = () => {
 
 // Index Page (Ryan)
 
+// Redirects URL to Buy Capri Page
+
+// const pathRedirect = () => {
+//   window.location.href = "/capris.html";
+//   // generateProduct();
+// }
+
 const buyCapriBttn = () => {
-  document.querySelector('#capri-btn').addEventListener('click', generateProduct);
+  for (let i = 0; i < capris.length; i++) {
+    document.querySelector(`#${capris[i].name}`).addEventListener('click', function () {generateProduct(capris[i])});
+  }
 }
 
 const capriCarousel = () => {
@@ -160,7 +168,7 @@ const capriCarousel = () => {
     <div class="carousel-item active">
       <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
       <div class="d-flex justify-content-center">
-        <a id="capri-btn" class="btn btn-primary" href="#" role="button">Buy ${capris[i].name}</a>
+        <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html" role="button">Buy ${capris[i].name}</a>
       </div>
       <p class="capri-description">${capris[i].description}</p>
     </div>
@@ -170,12 +178,12 @@ const capriCarousel = () => {
       <div class="carousel-item">
         <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
         <div class="d-flex justify-content-center">
-          <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button">Buy ${capris[i].name}</a>
+          <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html" role="button">Buy ${capris[i].name}</a>
         </div>
         <p class="capri-description">${capris[i].description}</p>
       </div>
       `;
-    }
+    } else;
   }
   printToDom("#carousel-items", domString);
   buyCapriBttn();
@@ -205,8 +213,9 @@ const contactSubmitClick = () => {
 const checkPathName = () => {
   if (location.pathname === '/index.html') {
     capriCarousel();
+    // generateProduct(capris[2]);
   } else if (location.pathname === '/capris.html') {
-    generateProduct(capris[0]);
+    generateProduct(capris[2]);
   } else if (location.pathname === '/contact.html') {
     contactSubmitClick();
   } else;
