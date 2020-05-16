@@ -94,12 +94,12 @@ const generateProduct = (selectedPants) => {
   domString = '';
   domString += `
   <div id="caprisDom">
-    <img id="buycaprispic" src="${capris[0].imageUrl}">
+    <img id="buycaprispic" src="${selectedPants[0].imageUrl}">
     <div id="nameandrating">
-      <h5 id="buycaprisname">${capris[0].name}</h5><h2>☆☆☆☆☆</h2>
+      <h5 id="buycaprisname">${selectedPants[0].name}</h5><h2>☆☆☆☆☆</h2>
     </div>
     <div class="caprisinfobox">
-      <p id="caprisinfo">${capris[0].description}</p>
+      <p id="caprisinfo">${selectedPants[0].description}</p>
       <div class="sizeandprice">
         <div id="sizeselector">
           <label id="sizelabel">Size:</label>
@@ -111,7 +111,7 @@ const generateProduct = (selectedPants) => {
             <option>XL - 36 x 35</option>
           </select>
         </div>
-        <h3 id="price">$${capris[0].price}</h3>
+        <h3 id="price">$${selectedPants[0].price}</h3>
       </div>
       <button id="cartbutton">Add to Cart</button>
     </div>
