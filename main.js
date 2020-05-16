@@ -215,7 +215,7 @@ const checkPathName = () => {
     capriCarousel();
     // generateProduct(capris[2]);
   } else if (location.pathname === '/capris.html') {
-    generateProduct(capris[2]);
+    generateProduct();
   } else if (location.pathname === '/contact.html') {
     contactSubmitClick();
   } else;
