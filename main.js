@@ -71,27 +71,35 @@ const capriHistory =[
     description: "Spanish tennis player Rafael Nadal wore capri pants in the majority of his matches before 2009.",
     numberOneSong: "The Black Eyed Peas-Boom Boom Pow"
   },
-]
+];
 
+// DOM
 
 const printToDom = (selector, textToPrint) => {
   const selectedDiv = document.querySelector(selector);
   selectedDiv.innerHTML = textToPrint;
 }
 
+// Redirects URLs
+
+const pathRedirect = (urlPath) => {
+  window.location.href = urlPath;
+}
+
 // Buy Capris page
 // Creates content for Buy Capris page based on click from home page
 
 const generateProduct = (selectedPants) => {
+  // pathRedirect("/capris.html");
   domString = '';
   domString += `
   <div id="caprisDom">
-    <img id="buycaprispic" src="${selectedPants.imageUrl}">
+    <img id="buycaprispic" src="${capris[0].imageUrl}">
     <div id="nameandrating">
-      <h5 id="buycaprisname">${selectedPants.name}</h5><h2>☆☆☆☆☆</h2>
+      <h5 id="buycaprisname">${capris[0].name}</h5><h2>☆☆☆☆☆</h2>
     </div>
     <div class="caprisinfobox">
-      <p id="caprisinfo">${selectedPants.description}</p>
+      <p id="caprisinfo">${capris[0].description}</p>
       <div class="sizeandprice">
         <div id="sizeselector">
           <label id="sizelabel">Size:</label>
@@ -103,7 +111,7 @@ const generateProduct = (selectedPants) => {
             <option>XL - 36 x 35</option>
           </select>
         </div>
-        <h3 id="price">$${selectedPants.price}</h3>
+        <h3 id="price">$${capris[0].price}</h3>
       </div>
       <button id="cartbutton">Add to Cart</button>
     </div>
@@ -122,7 +130,7 @@ const cartBttnClick = () => {
 // Prints order confirmed string
 
 const addedToCart = () => {
- domString = '';
+  domString = '';
   domString += `
   <div id="purchasedbox">
     <h1 id='purchaseconfirm'>Item added to cart!</h1>
@@ -132,13 +140,11 @@ const addedToCart = () => {
   printToDom('#caprismain', domString);
 }
 
-// Redirects to Capris Page on Button Click from Index Carousel
-
-const pathRedirect = () => {
-  window.location.href = "/capris.html";
-}
-
 // Index Page (Ryan)
+
+const buyCapriBttn = () => {
+  document.querySelector('#capri-btn').addEventListener('click', generateProduct);
+}
 
 const capriCarousel = () => {
   let domString = '';
@@ -148,24 +154,25 @@ const capriCarousel = () => {
     <div class="carousel-item active">
       <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
       <div class="d-flex justify-content-center">
-        <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button" onclick="${generateProduct[0]}">Buy ${capris[i].name}</a>
+        <a id="capri-btn" class="btn btn-primary" href="#" role="button">Buy ${capris[i].name}</a>
       </div>
       <p class="capri-description">${capris[i].description}</p>
     </div>
     `;
     } else if (i >= 1) {
-    domString += `
-    <div class="carousel-item">
-      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
-      <div class="d-flex justify-content-center">
-        <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button" onclick="${generateProduct[1]}">Buy ${capris[i].name}</a>
+      domString += `
+      <div class="carousel-item">
+        <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+        <div class="d-flex justify-content-center">
+          <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button">Buy ${capris[i].name}</a>
+        </div>
+        <p class="capri-description">${capris[i].description}</p>
       </div>
-      <p class="capri-description">${capris[i].description}</p>
-    </div>
-    `;
+      `;
     }
   }
   printToDom("#carousel-items", domString);
+  buyCapriBttn();
 }
 
 // Contact page
