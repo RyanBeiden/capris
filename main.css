@@ -201,11 +201,7 @@ li:hover {
   width: 90%;
 }
 
-#purchasedbox {
-  margin: 300px 0px;
-}
-
-#purchaseconfirm {
+.modal-title {
   font-family: 'Lemon', cursive;
 }
 
@@ -258,8 +254,4 @@ input[type=number]::-webkit-outer-spin-button {
   width: 30%;
   margin-bottom: 20px;
   margin-right: 40%;
-}
-
-#contactconfirm {
-  margin: 300px 70px 300px 70px;
 }
