@@ -135,14 +135,7 @@ const cartBttnClick = () => {
 // Prints order confirmed string
 
 const addedToCart = () => {
-  domString = '';
-  domString += `
-  <div id="purchasedbox">
-    <h1 id='purchaseconfirm'>Item added to cart!</h1>
-    <a href="index.html">Return to home page</a>
-  </div>
-  `;
-  printToDom('#caprismain', domString);
+  $('.modal').modal(focus)
 }
 
 // Index Page (Ryan)
@@ -192,16 +185,8 @@ const capriCarousel = () => {
 // Contact page
 
 const contactSubmitted =() => {
-  domString = '';
-  domString += `
-  <div id="emailsent">
-    <h1 id='emailsentconfirm'>Your message has been sent!</h1>
-    <a href="index.html">Return to home page</a>
-  </div>
-  `;
-  printToDom('#contactconfirm', domString);
   document.getElementById("contactform").reset();
-  document.getElementById("contactcontainer").hidden=true;
+  $('.modal').modal(focus)
 }
 
 const contactSubmitClick = () => {
