@@ -147,8 +147,8 @@ li:hover {
 }
 
 .capri-btn:hover {
-  background-color: rgba(195, 165, 30, 0.9);
-  border: 1px solid #c3a61e;
+  background-color: rgba(195, 165, 30, 0.9) !important;
+  border: 1px solid #c3a61e !important;
 }
 
 .capri-description {
