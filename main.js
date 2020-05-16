@@ -82,6 +82,16 @@ const printToDom = (selector, textToPrint) => {
 // Buy Capris page
 // Creates content for Buy Capris page based on click from home page
 
+const sizeDom = (pantsSize) => {
+  domString = ''
+  for (let i = 0; i < pantsSize.size.length; i++) {
+  domString += `
+  <option>${pantsSize.size[i]}</option>
+  `
+    printToDom('#size', domString);
+  }
+}
+
 const generateProduct = (selectedPants) => {
   domString = '';
   domString += `
@@ -96,11 +106,6 @@ const generateProduct = (selectedPants) => {
         <div id="sizeselector">
           <label id="sizelabel">Size:</label>
           <select name="sizelist" id="size">
-            <option>XS - 28 x 27</option>
-            <option>S - 30 x 29</option>
-            <option>M - 32 x 31</option>
-            <option>L - 34 x 33</option>
-            <option>XL - 36 x 35</option>
           </select>
         </div>
         <h3 id="price">$${selectedPants.price}</h3>
@@ -110,6 +115,7 @@ const generateProduct = (selectedPants) => {
   </div>
   `;
   printToDom('#caprismain', domString);
+  sizeDom(selectedPants);
   cartBttnClick();
 };
 
