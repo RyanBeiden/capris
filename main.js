@@ -1,8 +1,7 @@
 // Main Capri Array to use for index.html & capris.html
 // Star Ratings use integers 1 - 5
 
-const capris = [
-  {
+const capris = [{
     name: "Cargopris",
     description: "Made with the strongest cargo pockets.",
     imageUrl: "/images/capri-1.jpg",
@@ -54,19 +53,22 @@ const capris = [
 
 // Data for history carrousel 
 
-const capriHistory =[
+const capriHistory = [
 
-  { imageUrl: "/images/capri-7.jpg",
+  {
+    imageUrl: "/images/capri-7.jpg",
     timePeriod: "1950s",
     description: "Capris were created by Sonja de Lennart in the early 1950s. It was apart of the 'Capri Collection'. Named after the isle of capri where her family would holiday",
     numberOneSong: "Gordon Jenkins & The Weavers-Goodnight Irene"
   },
-  { imageUrl:"/images/capri-8.jpg",
+  {
+    imageUrl: "/images/capri-8.jpg",
     timePeriod: "1960s",
-    description: "Mary Tyler popularized Capri pants in the 60's on The Dick Van Dyke show",
+    description: "Mary Tyler Moore popularized Capri pants in the 60's on The Dick Van Dyke show",
     numberOneSong: "Percy Faith-Theme from A Summer Place"
   },
-  { imageUrl:"/images/capri-9.jpg",
+  {
+    imageUrl: "/images/capri-9.jpg",
     timePeriod: "2000s",
     description: "Spanish tennis player Rafael Nadal wore capri pants in the majority of his matches before 2009.",
     numberOneSong: "The Black Eyed Peas-Boom Boom Pow"
@@ -85,7 +87,7 @@ const printToDom = (selector, textToPrint) => {
 const sizeDom = (pantsSize) => {
   domString = ''
   for (let i = 0; i < pantsSize.size.length; i++) {
-  domString += `
+    domString += `
   <option>${pantsSize.size[i]}</option>
   `
     printToDom('#size', domString);
@@ -153,7 +155,7 @@ const capriCarousel = () => {
     </div>
     `;
     } else if (i >= 1) {
-    domString += `
+      domString += `
     <div class="carousel-item">
       <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
       <div class="d-flex justify-content-center">
@@ -167,9 +169,37 @@ const capriCarousel = () => {
   printToDom("#carousel-items", domString);
 }
 
+// History page Olamide
+
+const historyCarousel = () => {
+  let domString = '';
+  for (let i = 0; i < capriHistory.length; i++) {
+    if (i === 0) {
+      domString += `
+    <div id="carousel-container" class="carousel-item history-border active">
+      <img class="d-block w-100 history-image" src="${capriHistory[i].imageUrl}" alt="Capri 1">
+      <h1> ${capriHistory[i].timePeriod}</h1>
+      <p class="capri-description">${capriHistory[i].description}</p>
+      <a class="Song">NUMBER #1 SONG:${capriHistory[i].numberOneSong}</a>
+    </div>
+    `;
+    } else if (i >= 1) {
+      domString += `
+    <div class="carousel-item history-border">
+      <img class="d-block w-100 history-image" src="${capriHistory[i].imageUrl}" alt="Capri 1">
+      <h1> ${capriHistory[i].timePeriod}</h1>
+      <p class="capri-description">${capriHistory[i].description}</p>
+      <a class="Song">NUMBER #1 SONG:${capriHistory[i].numberOneSong}</a>
+    </div>
+    `;
+    }
+  }
+  printToDom("#history-carousel", domString);
+}
+
 // Contact page
 
-const contactSubmitted =() => {
+const contactSubmitted = () => {
   document.getElementById("contactform").reset();
   $('.modal').modal(focus)
 }
@@ -187,7 +217,9 @@ const checkPathName = () => {
     generateProduct(capris[0]);
   } else if (location.pathname === '/contact.html') {
     contactSubmitClick();
-  } else;
+  } else if (location.pathname === '/history.html') {
+    historyCarousel();
+  };
 }
 
 const init = () => {
