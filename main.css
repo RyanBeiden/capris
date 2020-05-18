@@ -206,6 +206,56 @@ li:hover {
 }
 
 /* History page layout */
+.carousel-item {
+  justify-content: center;
+  text-align: center;
+}
+
+#history-prev {
+  background-color: #e5562b;
+  border: 1px solid #e5562b;
+}
+
+#history-next {
+  background-color: #e5562b;
+  border: 1px solid #e5562b;
+}
+
+#history-carousel {
+  justify-content: center;
+  text-align: center;
+}
+
+.history-slide {
+  display: block;
+  margin: 0 auto;
+  width: inherit;
+}
+
+img.history-image {
+height: 60vh;
+object-fit: contain;
+}
+
+.Song {
+  font-family: 'Lemon', cursive;
+  color: #2a4a4a;
+}
+
+.history-title {
+  font-family: 'Lemon', cursive;
+  color: #2a4a4a;
+  text-align: center;
+}
+
+.history-border {
+  border: none !important;
+
+}
+
+
+
+
 
 /* Contact page layout */
 
