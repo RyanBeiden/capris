@@ -73,53 +73,63 @@ const capriHistory = [
     description: "Spanish tennis player Rafael Nadal wore capri pants in the majority of his matches before 2009.",
     numberOneSong: "The Black Eyed Peas-Boom Boom Pow"
   },
-]
+];
 
+// DOM
 
 const printToDom = (selector, textToPrint) => {
   const selectedDiv = document.querySelector(selector);
   selectedDiv.innerHTML = textToPrint;
 }
 
+// Index Page (Ryan)
+
+const buyCapriBttn = () => {
+  for (let i = 0; i < capris.length; i++) {
+  document.querySelector(`#${capris[i].name}`).addEventListener('click', generateProduct);
+  }
+}
+
+const capriCarousel = () => {
+  let domString = '';
+  for (let i = 0; i < capris.length; i++) {
+    if (i === 0) {
+      domString += `
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+      <div class="d-flex justify-content-center">
+        <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html?index=${i}" role="button">Buy ${capris[i].name}</a>
+      </div>
+      <p class="capri-description">${capris[i].description}</p>
+    </div>
+    `;
+    } else if (i >= 1) {
+      domString += `
+      <div class="carousel-item">
+        <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+        <div class="d-flex justify-content-center">
+          <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html?index=${i}" role="button">Buy ${capris[i].name}</a>
+        </div>
+        <p class="capri-description">${capris[i].description}</p>
+      </div>
+      `;
+    } else;
+  }
+  printToDom("#carousel-items", domString);
+  buyCapriBttn();
+}
+
 // Buy Capris page
-// Creates content for Buy Capris page based on click from home page
 
 const sizeDom = (pantsSize) => {
   domString = ''
   for (let i = 0; i < pantsSize.size.length; i++) {
     domString += `
-  <option>${pantsSize.size[i]}</option>
+      <option>${pantsSize.size[i]}</option>
   `
     printToDom('#size', domString);
   }
 }
-
-const generateProduct = (selectedPants) => {
-  domString = '';
-  domString += `
-  <div id="caprisDom">
-    <img id="buycaprispic" src="${selectedPants.imageUrl}">
-    <div id="nameandrating">
-      <h5 id="buycaprisname">${selectedPants.name}</h5><h2>☆☆☆☆☆</h2>
-    </div>
-    <div class="caprisinfobox">
-      <p id="caprisinfo">${selectedPants.description}</p>
-      <div class="sizeandprice">
-        <div id="sizeselector">
-          <label id="sizelabel">Size:</label>
-          <select name="sizelist" id="size">
-          </select>
-        </div>
-        <h3 id="price">$${selectedPants.price}</h3>
-      </div>
-      <button id="cartbutton">Add to Cart</button>
-    </div>
-  </div>
-  `;
-  printToDom('#caprismain', domString);
-  sizeDom(selectedPants);
-  cartBttnClick();
-};
 
 // This is the event listener for the add to cart page
 
@@ -133,40 +143,38 @@ const addedToCart = () => {
   $('.modal').modal(focus)
 }
 
-// Redirects to Capris Page on Button Click from Index Carousel
+// Creates content for Buy Capris page based on click from home page
 
-const pathRedirect = () => {
-  window.location.href = "/capris.html";
-}
-
-// Index Page (Ryan)
-
-const capriCarousel = () => {
-  let domString = '';
+const generateProduct = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('index');
+  domString = '';
   for (let i = 0; i < capris.length; i++) {
-    if (i === 0) {
-      domString += `
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
-      <div class="d-flex justify-content-center">
-        <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button" onclick="${generateProduct[0]}">Buy ${capris[i].name}</a>
+    if (i == myParam) {
+    domString += `
+    <div id="caprisDom">
+      <img id="buycaprispic" src="${capris[i].imageUrl}">
+      <div id="nameandrating">
+        <h5 id="buycaprisname">${capris[i].name}</h5><h2>☆☆☆☆☆</h2>
       </div>
-      <p class="capri-description">${capris[i].description}</p>
-    </div>
-    `;
-    } else if (i >= 1) {
-      domString += `
-    <div class="carousel-item">
-      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
-      <div class="d-flex justify-content-center">
-        <a id="capri-btn" class="btn btn-primary" href="/capris.html" role="button" onclick="${generateProduct[1]}">Buy ${capris[i].name}</a>
+      <div class="caprisinfobox">
+        <p id="caprisinfo">${capris[i].description}</p>
+        <div class="sizeandprice">
+          <div id="sizeselector">
+            <label id="sizelabel">Size:</label>
+            <select name="sizelist" id="size">
+            </select>
+          </div>
+          <h3 id="price">$${capris[i].price}</h3>
+        </div>
+        <button id="cartbutton">Add to Cart</button>
       </div>
-      <p class="capri-description">${capris[i].description}</p>
     </div>
     `;
     }
   }
-  printToDom("#carousel-items", domString);
+  printToDom('#caprismain', domString);
+  cartBttnClick();
 }
 
 // History page Olamide
@@ -213,13 +221,13 @@ const contactSubmitClick = () => {
 const checkPathName = () => {
   if (location.pathname === '/index.html') {
     capriCarousel();
-  } else if (location.pathname === '/capris.html') {
-    generateProduct(capris[0]);
-  } else if (location.pathname === '/contact.html') {
-    contactSubmitClick();
+   } else if (location.pathname === '/capris.html') {
+      generateProduct();
+   } else if (location.pathname === '/contact.html') {
+      contactSubmitClick();
   } else if (location.pathname === '/history.html') {
     historyCarousel();
-  };
+  } else;
 }
 
 const init = () => {
