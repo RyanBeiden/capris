@@ -175,6 +175,7 @@ const generateProduct = () => {
   }
   printToDom('#caprismain', domString);
   cartBttnClick();
+  sizeDom(capris[myParam])
 }
 
 // History page Olamide
