@@ -80,25 +80,75 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
+// Index Page (Ryan)
+
+const buyCapriBttn = () => {
+  for (let i = 0; i < capris.length; i++) {
+  document.querySelector(`#${capris[i].name}`).addEventListener('click', generateProduct);
+  }
+}
+
+const capriCarousel = () => {
+  let domString = '';
+  for (let i = 0; i < capris.length; i++) {
+    if (i === 0) {
+      domString += `
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+      <div class="d-flex justify-content-center">
+        <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html?index=${i}" role="button">Buy ${capris[i].name}</a>
+      </div>
+      <p class="capri-description">${capris[i].description}</p>
+    </div>
+    `;
+    } else if (i >= 1) {
+      domString += `
+      <div class="carousel-item">
+        <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
+        <div class="d-flex justify-content-center">
+          <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html?index=${i}" role="button">Buy ${capris[i].name}</a>
+        </div>
+        <p class="capri-description">${capris[i].description}</p>
+      </div>
+      `;
+    } else;
+  }
+  printToDom("#carousel-items", domString);
+  buyCapriBttn();
+}
+
 // Buy Capris page
-// Creates content for Buy Capris page based on click from home page
 
 const sizeDom = (pantsSize) => {
   domString = ''
   for (let i = 0; i < pantsSize.size.length; i++) {
-  domString += `
-  <option>${pantsSize.size[i]}</option>
-  `
+    domString += `
+    <option>${pantsSize.size[i]}</option>
+    `
     printToDom('#size', domString);
   }
 }
 
-const generateProduct = (selectedPants) => {
-  // window.location.href = "/capris.html";
+// This is the event listener for the add to cart page
+
+const cartBttnClick = () => {
+  document.querySelector('#cartbutton').addEventListener('click', addedToCart);
+}
+
+// Prints order confirmed string
+
+const addedToCart = () => {
+  $('.modal').modal(focus)
+}
+
+// Creates content for Buy Capris page based on click from home page
+
+const generateProduct = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('index');
   domString = '';
-  console.log(selectedPants);
   for (let i = 0; i < capris.length; i++) {
-    if (capris[i] === selectedPants) {
+    if (i == myParam) {
     domString += `
     <div id="caprisDom">
       <img id="buycaprispic" src="${capris[i].imageUrl}">
@@ -122,64 +172,7 @@ const generateProduct = (selectedPants) => {
     }
   }
   printToDom('#caprismain', domString);
-  sizeDom(selectedPants);
   cartBttnClick();
-}
-
-// This is the event listener for the add to cart page
-
-const cartBttnClick = () => {
-  document.querySelector('#cartbutton').addEventListener('click', addedToCart);
-}
-
-// Prints order confirmed string
-
-const addedToCart = () => {
-  $('.modal').modal(focus)
-}
-
-// Index Page (Ryan)
-
-// Redirects URL to Buy Capri Page
-
-// const pathRedirect = () => {
-//   window.location.href = "/capris.html";
-//   // generateProduct();
-// }
-
-const buyCapriBttn = () => {
-  for (let i = 0; i < capris.length; i++) {
-    document.querySelector(`#${capris[i].name}`).addEventListener('click', function () {generateProduct(capris[i])});
-  }
-}
-
-const capriCarousel = () => {
-  let domString = '';
-  for (let i = 0; i < capris.length; i++) {
-    if (i === 0) {
-      domString += `
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
-      <div class="d-flex justify-content-center">
-        <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html" role="button">Buy ${capris[i].name}</a>
-      </div>
-      <p class="capri-description">${capris[i].description}</p>
-    </div>
-    `;
-    } else if (i >= 1) {
-      domString += `
-      <div class="carousel-item">
-        <img class="d-block w-100" src="${capris[i].imageUrl}" alt="Capri 1">
-        <div class="d-flex justify-content-center">
-          <a id="${capris[i].name}" class="btn btn-primary capri-btn" href="/capris.html" role="button">Buy ${capris[i].name}</a>
-        </div>
-        <p class="capri-description">${capris[i].description}</p>
-      </div>
-      `;
-    } else;
-  }
-  printToDom("#carousel-items", domString);
-  buyCapriBttn();
 }
 
 // Contact page
@@ -198,11 +191,10 @@ const contactSubmitClick = () => {
 const checkPathName = () => {
   if (location.pathname === '/index.html') {
     capriCarousel();
-    // generateProduct(capris[2]);
-  } else if (location.pathname === '/capris.html') {
-    generateProduct(capris[2]);
-  } else if (location.pathname === '/contact.html') {
-    contactSubmitClick();
+   } else if (location.pathname === '/capris.html') {
+      generateProduct();
+   } else if (location.pathname === '/contact.html') {
+      contactSubmitClick();
   } else;
 }
 
