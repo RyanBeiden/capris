@@ -131,6 +131,21 @@ const sizeDom = (pantsSize) => {
   }
 }
 
+const starDom = (pantsRating) => {
+  domString = ''
+  for (let i = 0; i < pantsRating.starRating; i++) {
+    domString += `
+    ★
+  `
+  }
+  for (let i = 5; i > pantsRating.starRating; i--) {
+    domString += `
+    ☆
+  `
+  }
+  printToDom('#ratingDom', domString);
+}
+
 // This is the event listener for the add to cart page
 
 const cartBttnClick = () => {
@@ -155,7 +170,7 @@ const generateProduct = () => {
     <div id="caprisDom">
       <img id="buycaprispic" src="${capris[i].imageUrl}">
       <div id="nameandrating">
-        <h5 id="buycaprisname">${capris[i].name}</h5><h2>☆☆☆☆☆</h2>
+        <h5 id="buycaprisname">${capris[i].name}</h5><h2><div id="ratingDom"></div></h2>
       </div>
       <div class="caprisinfobox">
         <p id="caprisinfo">${capris[i].description}</p>
@@ -176,6 +191,7 @@ const generateProduct = () => {
   printToDom('#caprismain', domString);
   cartBttnClick();
   sizeDom(capris[myParam])
+  starDom(capris[myParam])
 }
 
 // History page Olamide
