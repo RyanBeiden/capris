@@ -75,6 +75,12 @@ const capriHistory = [
   },
 ];
 
+// Navbar Color Changes
+
+const navbarColor = (elementId, color) => {
+  document.getElementById(elementId).style.backgroundColor = color;
+} 
+
 // DOM
 
 const printToDom = (selector, textToPrint) => {
@@ -82,7 +88,7 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-// Index Page (Ryan)
+// Index Page
 
 const buyCapriBttn = () => {
   for (let i = 0; i < capris.length; i++) {
@@ -238,12 +244,16 @@ const contactSubmitClick = () => {
 const checkPathName = () => {
   if (location.pathname === '/index.html') {
     capriCarousel();
+    navbarColor("home-color", "#c3a61e");
    } else if (location.pathname === '/capris.html') {
       generateProduct();
+      navbarColor("home-color", "#c3a61e");
    } else if (location.pathname === '/contact.html') {
       contactSubmitClick();
+      navbarColor("contact-color", "#a775d2");
   } else if (location.pathname === '/history.html') {
-    historyCarousel();
+      historyCarousel();
+      navbarColor("history-color", "#e5562b");
   } else;
 }
 
