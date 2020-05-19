@@ -2,43 +2,56 @@
 
 .navbar {
   margin: 0;
-  padding: 0;
+  padding: 15px 0px 0px 10px;
 }
 
 .navbar img {
-  margin: 5px 15px 5px 60px;
-  padding: 0;
+  margin: 5px 15px 0px 50px;
+  padding-bottom: 20px;
+  width: 215px;
 }
 
 .navtabs {
   display: flex;
-  margin: 0;
+  margin: 0px 70px 0px 0px;
   padding: 0;
   align-self: flex-end;
   font-family: 'Lemon', cursive;
 }
 
-.navbutton {
-  margin: 0;
-  padding: 10px;
-  border: solid 1px #2a4a4a;
-  border-bottom: 0;
-  width: 130px;
-  border-radius: 15px 15px 0px 0px ;
+.navbutton a {
+  padding: 5px 30px 2px 30px;
   text-align: center;
+  color: #2a4a4a;
+  transition: ease-in-out 200ms;
+  font-size: 1.1em;
 }
 
-#hometab {
+.navbutton a:hover {
+  padding: 10px 30px 2px 30px;
+  text-decoration: none;
+}
+
+.hometab {
+  border: solid 1px #2a4a4a;
+  border-bottom: 0;
+  border-radius: 15px 15px 0px 0px;
   background-color: #c3a61e;
   color: #2a4a4a;
 }
 
-#historytab {
+.historytab {
+  border: solid 1px #2a4a4a;
+  border-bottom: 0;
+  border-radius: 15px 15px 0px 0px;
   background-color: #e5562b;
   color: #2a4a4a;
 }
 
-#contacttab {
+.contacttab {
+  border: solid 1px #2a4a4a;
+  border-bottom: 0;
+  border-radius: 15px 15px 0px 0px;
   background-color: #a775d2;
   color: #2a4a4a;
 }
@@ -74,7 +87,7 @@ li {
   display: flex;
 }
 
-li:hover {
+.social li:hover {
   color: #292929;
   border: 1px solid #292929;
   transition: .5s;
@@ -92,9 +105,7 @@ li:hover {
   background-color: hotpink;
 }
 
-/* Sitewide page layout */
-
-/* Index page layout */
+/* Index page */
 
 .see-capris h1 {
   font-family: 'Lemon', cursive;
@@ -158,7 +169,7 @@ li:hover {
   font-size: 1.1em;
 }
 
-/* Capris page layout */
+/* Capris page */
 
 #caprismain {
   justify-content: center;
@@ -205,7 +216,7 @@ li:hover {
   font-family: 'Lemon', cursive;
 }
 
-/* History page layout */
+/* History page */
 .carousel-item {
   justify-content: center;
   text-align: center;
@@ -253,11 +264,7 @@ object-fit: contain;
 
 }
 
-
-
-
-
-/* Contact page layout */
+/* Contact page */
 
 .contactthanks {
   font-family: 'Lemon', cursive;

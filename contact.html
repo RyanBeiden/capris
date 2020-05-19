@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONTACT US - Capri & Sons</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://i.imgur.com/IWnKmEd.png">
-</head>
-
-  <header>
-    <nav class="navbar" id="contacttab">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US - Capri & Sons</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IWnKmEd.png">
+  </head>
+  <body>
+    <nav class="navbar" id="contact-color">
       <a href="index.html">
         <img src="https://i.imgur.com/5nXiLFh.png" href="index.html">
       </a>
-      <div class="navtabs">
-        <a class="navbutton" id="hometab" href="index.html">Home</a>
-        <a class="navbutton" id="historytab" href="history.html">History</a>
-        <a class="navbutton" id="contacttab" href="contact.html">Contact</a>
-      </div>
+      <ul class="navtabs">
+        <li class="navbutton"><a class="hometab" href="index.html">Home</a></li>
+        <li class="navbutton"><a class="historytab" href="history.html">History</a></li>
+        <li class="navbutton"><a class="contacttab" href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-  </header>
 
-<div id="contactcontainer">
-  <div class="contactpage" id="contactpage">
-    <h2 class="contactthanks">Thanks for getting in touch!</h2>
-    <p class="contactinstructions">Have a question about a product? Something to ask about your order? Just want to reach out and say how much you love our capris? We love talking to our customers, no matter what! Please fill out the required info in the form below and, if your message regards an existing order, provide the order number that can be found in your confirmation email. We will respond to your inquiry within two businesses days excluding Sundays, New Year's Day, Chinese New Year, St. Patrick's Day, Cinco de Mayo, Thanksgiving, Christmas, Yom Kippur, any day in April, Tony Hawk's Birthday, any calendar day which is a multiple of 4, and Labor Day.</p>
-  </div>
-  <form class="contactform" id="contactform">
-    <input class="contactfield" type="text" id="name" name="name" required placeholder="Name">
-    <input class="contactfield" type="email" id="email" name="email" required placeholder="Email Address">
-    <input class="contactfield" type="number" id="ordernum" name="ordernum" step="1" placeholder = "Order Number (if inquiring about an existing order)" min="100000" max="999999">
-    <input class="contactfield" type="text" id="subject" name="subject" required placeholder="Subject">
-    <textarea class="contactmessage" id="contactmessage" name="contactmessage" required placeholder="Your Message"></textarea>
-  </form>
-  <div class="subscribesubmit">
-    <div>
-      <label for="checkbox">Subscribe to our mailing list?</label>
-      <input type="checkbox">
-    </div>
-    <button id="contactbutton">Submit</button>
-  </div>
-</div>
-
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Your message has been sent!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div id="contactcontainer">
+      <div class="contactpage" id="contactpage">
+        <h2 class="contactthanks">Thanks for getting in touch!</h2>
+        <p class="contactinstructions">Have a question about a product? Something to ask about your order? Just want to reach out and say how much you love our capris? We love talking to our customers, no matter what! Please fill out the required info in the form below and, if your message regards an existing order, provide the order number that can be found in your confirmation email. We will respond to your inquiry within two businesses days excluding Sundays, New Year's Day, Chinese New Year, St. Patrick's Day, Cinco de Mayo, Thanksgiving, Christmas, Yom Kippur, any day in April, Tony Hawk's Birthday, any calendar day which is a multiple of 4, and Labor Day.</p>
       </div>
-      <div class="modal-body">
-        <a href="index.html">Return to home page</a>
+      <form class="contactform" id="contactform">
+        <input class="contactfield" type="text" id="name" name="name" required placeholder="Name">
+        <input class="contactfield" type="email" id="email" name="email" required placeholder="Email Address">
+        <input class="contactfield" type="number" id="ordernum" name="ordernum" step="1" placeholder = "Order Number (if inquiring about an existing order)" min="100000" max="999999">
+        <input class="contactfield" type="text" id="subject" name="subject" required placeholder="Subject">
+        <textarea class="contactmessage" id="contactmessage" name="contactmessage" required placeholder="Your Message"></textarea>
+      </form>
+      <div class="subscribesubmit">
+        <div>
+          <label for="checkbox">Subscribe to our mailing list?</label>
+          <input type="checkbox">
+        </div>
+        <button id="contactbutton">Submit</button>
       </div>
     </div>
-  </div>
-</div>
 
-  <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer">
-    <ul class="social">
-      <li><i class="fab fa-facebook"></i></li>
-      <li><i class="fab fa-twitter"></i></li>
-      <li><i class="fab fa-instagram"></i></li>
-      <li><i class="fab fa-github"></i></li>
-    </ul>
-    <div class="copywrite"><small>Copyright &copy; CapriAndSons.com <br><a href="contact.html">Contact Us</a></small></div>
-  </footer>
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your message has been sent!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <a href="index.html">Return to home page</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/3c70a135dc.js" crossorigin="anonymous"></script>
-  <script src="main.js"></script>
-</body>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer">
+      <ul class="social">
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-github"></i></li>
+      </ul>
+      <div class="copywrite"><small>Copyright &copy; CapriAndSons.com <br><a href="contact.html">Contact Us</a></small></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3c70a135dc.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
