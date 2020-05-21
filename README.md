@@ -10,7 +10,7 @@ This is a forked project that I have taken on as a work in progress to build new
 - Run any http server `$ hs` or code editor to view project 👀
 
 ## Technologies Used
-[![Git](https://img.shields.io/badge/-Git-2c9fcc?style=flat-square)](#) [![Github Teams](https://img.shields.io/badge/-Github%20Teams-2c9fcc?style=flat-square)](#) [![Vanilla JavaScript](https://img.shields.io/badge/-Vanilla%20JavaScript-2c9fcc?style=flat-square)](#) [![HTML](https://img.shields.io/badge/-HTML-2c9fcc?style=flat-square)](#) [![CSS](https://img.shields.io/badge/-Event%20Listeners-2c9fcc?style=flat-square)](#)
+[![Git](https://img.shields.io/badge/-Git-2c9fcc?style=flat-square)](#) [![Github Teams](https://img.shields.io/badge/-Github%20Teams-2c9fcc?style=flat-square)](#) [![Vanilla JavaScript](https://img.shields.io/badge/-Vanilla%20JavaScript-2c9fcc?style=flat-square)](#) [![HTML](https://img.shields.io/badge/-HTML-2c9fcc?style=flat-square)](#) [![CSS](https://img.shields.io/badge/-CSS-2c9fcc?style=flat-square)](#)
 
 #### Backlog/Roadmap
 
